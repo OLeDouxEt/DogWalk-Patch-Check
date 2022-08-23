@@ -1,4 +1,11 @@
-<##>
+<#
+.SYNOPSIS
+This script is intended to be deployed from a RMM console to run accross
+multiple machines to check if the patch for CVE-2022-34713 (AKA "DogWalk")
+has been installed for Windows machines. This will check all relevant patches
+for Windows 7 64/32 bit, Windows 8/8.1 RT/64/32/ bit, all versions of Windows 10 64/32 bit,
+all versions of Windows 11 ARM/64/32 bit, and Windows Server 2008, 2012, 2016, 2019, and 2022.
+#>
 $patchArr = @(
                 "KB5016622",
                 "KB5016623",
