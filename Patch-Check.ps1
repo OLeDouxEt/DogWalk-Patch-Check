@@ -44,8 +44,11 @@ Function Compare-Patches(){
 }
 
 $IsPatched = Compare-Patches -array $patchArr
+$window = New-Object -ComObject Wscript.Shell
 if($IsPatched[0]){
     Write-Host "Patch: $($IsPatched[1]) is installed for CVE-2022-34713."
+    $window.Popup("Patch: $($IsPatched[1]) is installed for CVE-2022-34713.",0,"Patch Installed",64)
 }else{
     Write-Host "No patch installed for CVE-2022-34713."
+    $window.Popup("No patch installed for CVE-2022-34713!",0,"Patch NOT Installed",48)
 }
